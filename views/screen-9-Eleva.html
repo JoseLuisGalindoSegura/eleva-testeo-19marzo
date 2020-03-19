@@ -1,0 +1,174 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <title>Davivienda S.A.</title>
+</head>
+
+<!--Se agrega la propiedad ontouchstart para solucionar el problema de los tootltip en iphone-->
+<body ontouchstart>
+  <section class="container">
+    <!-- Botón "atrás" Mobile -->
+    <a href="javascript:void(0)" class="backButton">
+      <span class="icon-dv-btnBack"></span>
+      Atrás
+    </a>
+    <!-- Fin Botón "atrás" Mobile -->
+
+    <!-- Tracking alterno - clase: dataNav__step--complete -->
+    <div class="trackingMain">
+      <div class="trackingMain__dataNav">
+        <!-- No se necesita poner números en el tracking, van automaticos por CSS -->
+        <a href="javascript:void(0)" class="dataNav__step dataNav__step--complete"></a>
+        <a href="javascript:void(0)" class="dataNav__step dataNav__step--complete"></a>
+        <a href="javascript:void(0)" class="dataNav__step"></a>
+      </div>
+    </div>
+    <!-- data-navn fin -->
+    <div class="contentBox contentBox--fullWidth contentBox--pdngBottonDefault">
+      <div class="container container--margForAportes">
+        <h2 class="regular noMrgn">
+          Dinero para iniciar su objetivo de inversión:
+        </h2>
+        <h2 class="extraBig">$500.000</h2>
+        <!-- Formularios -->
+        <form id="myFormObjectives">
+          <div class="input input--mrgBtnMedium">
+            <label for="savingsAccount">¿Desde cuál producto quiere realizar su inversión
+              inicial?</label>
+            <select name="" id="savingsAccount" onchange="selectOption()">
+              <!--Se modificn los value para usarlos en la funcion de jaba-->
+              <option value="0">Seleccione una opción...</option>
+              <option value="1">Cta Ahorros ****4578</option>
+              <option value="2">Cta Ahorros ****1248</option>
+              <option value="3">Cta Ahorros ****6797</option>
+            </select>
+            <div id="saldoDisponible" class="avaBalance avaBalance--showNone">
+              <p>Saldo disponible:</p>
+              <label for="" id="changeValue"></label>
+            </div>
+          </div>
+
+          <div class="input input--mrgBtnMedium">
+            <label>¿Este dinero tuvo retención en la fuente?
+              <a href="javascript:void(0)" class="buttonTooltip buttonTooltip--textPosition"><span
+                  class="icon-dv-tooltipInfo"></span></a>
+              <div class="tooltip tooltip--moreTop">
+                <p>
+                Es sujeto de retención en la fuente el dinero que proviene de salarios, honorarios, ventas de inmuebles y rendimientos financieros, entre otros.
+                </p>
+              </div>
+            </label>
+
+            <label class="radio radio--firts">
+              Si
+              <input type="radio" value="" name="dir-principal" />
+              <div class="radio__indicator"></div>
+            </label>
+            <label class="radio">
+              No
+              <input type="radio" value="" name="dir-principal" />
+              <div class="radio__indicator"></div>
+            </label>
+          </div>
+          <hr class="barQuestion barQuestion--noMarginTop" />
+
+          <h2 class="regular noMrgn">Dinero a aportar mensualmente</h2>
+          <h2 class="extraBig">$350.000</h2>
+
+          <div class="input input--mrgBtnMedium">
+            <label for="actividad-laboral">¿Desde cuál producto quiere realizar sus aportes
+              mensuales?</label>
+            <select name="" id="actividad-laboral"  onchange="selectOptionAL()">
+              <option value="0">Seleccione una opción...</option>
+              <option value="1">Cta Ahorros ****4578</option>
+              <option value="2">Cta Ahorros ****1248</option>
+              <option value="3">Cta Ahorros ****6797</option>
+            </select>
+            <!--Se comenta la funcion ya que puede ser usada en el futuro
+            <div id="saldoDisponibleAL" class="avaBalance avaBalance--showNone">
+              <p>Saldo disponible:</p>
+              <label for="" id="changeValueAL"></label>
+            </div> -->
+          </div>
+
+          <div class="input input--mrgBtnMedium">
+            <label for="selectDay">Seleccione el dia del mes en que se realizará el aporte
+              periódico.</label>
+            <select name="selectDay" id="">
+              <option value="-1" disabled selected>Seleccione un dia</option>
+              <option value="dayOne">1</option>
+              <option value="dayTwo">2</option>
+            </select>
+          </div>
+          <div class="input input--mrgnBottomForFormularioaporte">
+            <label>¿Estos aportes provendrán de ingresos que tendrán un proceso previó de retención en la fuente?
+              <a href="javascript:void(0)" class="buttonTooltip buttonTooltip--textPosition"><span class="icon-dv-tooltipInfo icon-dv-tooltipInfo--noInterLine"></span></a>
+              <div class="tooltip tooltip--moreTop">
+                <p>
+                  Es sujeto de retención en la fuente el dinero que proviene de salarios, honorarios, ventas de inmuebles y rendimientos financieros, entre otros.
+                </p>
+              </div>
+            </label>
+  
+            <label class="radio radio--firts">
+              Si
+              <input type="radio" value="" name="dir-secondary" id="yes">
+              <div class="radio__indicator"></div>
+            </label>
+            <label class="radio">
+              No
+              <input type="radio" value="" name="dir-secondary" >
+              <div class="radio__indicator"></div>
+            </label>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+    <!-- Fin Formularios -->
+    <div class="contTextInformation contTextInformation--fullWidth contTextInformation--noMrgnBottom">
+      <p class="contTextInformation__moreFontSize">
+        <!-- 27 01 2020 - Se modifica el texto ya que la palabra fecha se encuentra duplicada-->
+        Los aportes mensuales que se realicen en días <br> no hábiles, serán <strong>abonados al siguiente día hábil.</strong> 
+      </p>
+    </div>
+    <!-- Contenedor y Botones igual ancho -->
+    <div class="contButtons contButtons--sameWidth contButtons--noMrgnBtn">
+      <button type="submit" class="button button--secondary button--marginBoton15" id="validateObjectives">
+        Continuar
+      </button>
+    </div>
+    <!-- Fin Contenedor y Botones igual ancho -->
+  </section>
+
+  <!-- Proceso de estudio de crédito -->
+  <section class="contStudyProcess" id="StudyProcess">
+    <h2 class="contStudyProcess__title">Estamos evaluando su solicitud.</h2>
+    <div class="clockAnimation">
+      <span class="clockAnimation__item clockAnimation--light__item"></span>
+      <span class="clockAnimation__item clockAnimation--light__item"></span>
+      <span class="clockAnimation__item clockAnimation--light__item clockAnimation__item--vertical"></span>
+    </div>
+    <p class="contStudyProcess__text">
+      <span>Espere un momento por favor…</span>
+      <span>Recuerde que este proceso de evaluación <strong>NO</strong> tiene
+        cobros por comisión de tramite.</span>
+      <span>¡No use intermediarios!</span>
+    </p>
+  </section>
+  <!-- Fin Proceso de estudio de crédito -->
+  <script src="../js/main.js"></script>
+  <script src="../js/avabalance.js"></script>
+
+  
+
+  
+</body>
+
+</html>
